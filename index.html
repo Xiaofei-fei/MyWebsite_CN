@@ -1,0 +1,683 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0" />
+	<link rel="stylesheet" type="text/css" href="webpage/bootstrap.min.css" />
+	<script language="javascript" src="webpage/jquery.min.js"></script>
+	<script language="javascript" src="webpage/bootstrap.min.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="webpage/cssReset.css" />
+	<title>Xiaoffy</title>
+	<meta name="description"
+		content="Personal website for Junwei Liang at Carnegie Mellon University. Junwei Liang is a Ph.D. candidate in the Language Technologies Institute at Carnegie Mellon University. Received the graduation degree from Renmin University, Beijing, China, in 2015, where he worked as a research assistant in the multimedia lab at Renmin University. He received the Master of Language Technologies degree from the Language Technologies Institute at Carnegie Mellon University in 2017. He was at Google Inc., Pittsburgh, PA, as a student researcher in 2018. His research interests include computer vision, natural language processing and machine learning.">
+	<meta name="keywords" content="Junwei Liang,CMU,computer vision,PhD">
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-156016426-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
+
+		gtag('config', 'UA-156016426-1');
+	</script>
+
+</head>
+
+<body>
+	<style type='text/css'>
+		body {
+			font-family: arial, "Microsoft YaHei", 微软雅黑, 宋体, Helvetica;
+			font-size: 20px;
+		}
+
+		/*
+		div.content:
+			provide the content div in the middle
+	*/
+		body div.content {
+			/*width:1280px;*/
+			width: 1000px;
+			margin: 0 auto;
+			line-height: 30px;
+		}
+
+		/*
+		header wrapper
+	*/
+		body div.header {
+			background-color: #2196F3;
+		}
+
+		body div.header>div.content {
+			padding: 10px;
+		}
+
+		/*
+		footer1
+	*/
+		body div.footer1 {
+			margin-top: 30px;
+			background-color: #64B5F6;
+		}
+
+		/*
+		footer2
+	*/
+		body div.footer2 {
+			background-color: #2196F3;
+		}
+
+		body div.footer>div.content {
+			padding: 10px;
+		}
+
+		body div.footer1>div.content {
+			padding: 20px;
+			line-height: 40px;
+			font-size: 1.2em;
+		}
+
+		/*
+		utils css
+	*/
+		div.white-text {
+			color: white;
+			font-size: 30px;
+			font-weight: bold;
+		}
+
+		div.content>div.title {
+			padding: 20px 0;
+			border-top: 1px silver solid;
+			margin-top: 30px;
+			font-size: 2em;
+			font-weight: bold;
+		}
+
+		body a {
+			text-decoration: none;
+		}
+
+		div.content ul {
+			list-style: disc inside none;
+		}
+
+		div.content ol {
+			list-style: none inside none;
+		}
+
+		div.content li {
+			line-height: 30px;
+			padding-bottom: 5px;
+		}
+
+		div.content div.float-right {
+			float: right;
+		}
+	</style>
+	<!-- css for bio -->
+	<style type="text/css">
+		/*
+		bio
+	*/
+		div.bio {
+			font-size: 1.2em;
+		}
+
+		div.bio>div.left {
+			float: left;
+			width: 300px;
+		}
+
+		div.bio>div.left>img.me {
+			max-height: 220px;
+			margin: 10px;
+			max-width: 220px;
+			margin-top: 20px;
+			margin-left: 40px;
+		}
+
+		div.bio>div.right {
+			margin: 0 0 0 310px;
+			min-height: 300px;
+		}
+
+		div.bio>div.right>div.line.name {
+			padding: 15px 0;
+			line-height: 40px;
+		}
+
+		div.bio>div.right>div.name>span.name,
+		div.bio>div.right>div.name>span.chineseName {
+			font-size: 2em;
+			font-weight: bold;
+		}
+
+		div.bio>div.right>div.name>span.chinesesName {
+			font-family: "Microsoft YaHei", 微软雅黑, 宋体, Helvetica, arial;
+		}
+
+		div.bio>div.right>div.name>span.misc {
+			font-size: 1.5em;
+			font-weight: bold;
+		}
+
+		div.bio>div.right>div.line.school {
+			padding: 5px 0;
+		}
+
+		div.bio>div.right>div.line.office {
+			padding: 5px 0;
+		}
+	</style>
+	<!-- quick link and intro -->
+	<style type="text/css">
+		div.quickLink {
+			min-height: 70px;
+		}
+
+		div.quickLink>.block {
+			display: block;
+			float: left;
+			padding: 10px 0px;
+			text-align: center;
+			border: 1px silver solid;
+			border-radius: 5px;
+			box-shadow: 2px 2px 1px silver;
+			width: 140px;
+			margin-right: 50px;
+			margin-top: 20px;
+			cursor: pointer;
+		}
+	</style>
+	<!-- research and education -->
+	<style type="text/css">
+		div.research>ul>li>span.title,
+		div.research>ul>li>div.time,
+		div.education>ul>li>span.title,
+		div.education>ul>li>div.time,
+		div.pro>ul>li>span.title {
+			font-weight: bold;
+			font-size: 1.1em;
+		}
+
+		div.research>ul>li>div.info,
+		div.education>ul>li>div.info,
+		div.pro>ul>li>div.info {
+			padding-left: 20px;
+			word-wrap: break-word;
+		}
+	</style>
+	<!-- publications -->
+	<style type="text/css">
+		div.publications>ol>li {
+			padding-bottom: 30px;
+		}
+
+		div.publications>ol>li>span.title {
+			font-weight: bold;
+			font-size: 1.2em;
+		}
+
+		div.publications>ol>li>div.info {
+			padding-left: 20px;
+			word-wrap: break-word;
+		}
+
+		div.publications>ol>li>div.info.italic {
+			font-style: italic;
+		}
+
+		div.publications div.imgblock {
+			float: left;
+			height: 180px;
+			width: 300px;
+			padding: 10px;
+			margin-right: 30px;
+			text-align: center;
+		}
+
+		div.publications div.imgblock>img {
+			max-width: 100%;
+			max-height: 100%;
+		}
+
+		img.press {
+			height: 20px;
+		}
+	</style>
+	<div class="header">
+		<div class="content white-text">
+			Xiaoffy
+		</div>
+	</div>
+
+
+	<div class="content bio">
+		<!-- bio -->
+		<div class="left">
+			<img class='me' src="resources/me.jpg"></img>
+			<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://github.com/Xiaofei-fei">
+				<img class='github' style="height:30px" src="resources/github.png"></img>
+			</a>
+			<a href="https://www.zhihu.com/people/yu-xiao-fei-96-64">
+				<img class='zhihu' style="height:25px" title="My Zhihu page" src="resources/zhihu.png"></img>
+			</a>
+			<a href="resources/wechat.jpg">
+				<img class='weixin' style="height:25px" src="resources/weixin.png"></img>
+			</a>
+			<a href="https://blog.csdn.net/qq_37590674?spm=1000.2115.3001.5343">
+				<img class='csdn' style="height:20px" src="resources/csdn.png"></img>
+			</a>
+			<a href="resources/cv.pdf">
+				<img class='CV' style="height:20px" src="resources/cv.jpg"></img>
+			</a>
+
+		</div>
+		<div class="right">
+			<div class="line name">
+				<!-- <span class="name">Xiaoffy</span>
+				<span class="misc">(Ph.D. Candidate)</span>  -->
+				&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;<span
+					class="chineseName">于晓飞</span>
+			</div>
+			<div class="line school">
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;北京航空航天大学
+			</div>
+			<div class="line school" ,font-size='30px'>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;交通运输
+			</div>
+			<div class="line school">
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;研究生
+			</div>
+			<br />
+			<div class="line office">
+				地址: 北京市昌平区沙河高教园北京航空航天大学沙河校区
+			</div>
+			<div class="line office">
+				邮箱: xiaofei_66@buaa.edu.cn
+			</div>
+		</div>
+	</div>
+
+	<div class="content quickLink">
+		<a class="block" href="#publications">文章</a>
+		<!-- <a class="block" href="#honors">奖励</a> -->
+		<a class="block" href="#project">项目</a>
+		<a class="block" href="https://github.com/Xiaofei-fei" target="_blank">GitHub</a>
+		<a class="block" href="https://blog.csdn.net/qq_37590674?spm=1001.2100.3001.5343" target="_blank">CSDN</a>
+		<a class="block" href="https://xiaofei-fei.github.io/CV/">CV</a>
+	</div>
+
+	<div class="content intro">
+		<div class='title'>自我介绍</div>
+		大家好，我是来自 <a href="http://transportation.buaa.edu.cn/">北京航空航天大学交通科学与工程学院</a>
+		的一名在读研究生<br />
+		我的研究方向是基于数据驱动的停车设施选址问题 <br />
+		我对机器学习算法，数据分析与挖掘以及大数据开发等方向也有着浓厚的兴趣。 <br />
+	</div>
+
+	<div class="content news">
+		<a name="news"></a>
+		<div class="title">最近动态</div>
+		<ul>
+			<li>
+				[10/2021] 参加“华为杯”研究生数学建模竞赛(队长),机组排班问题
+			</li>
+			<li>
+				[8/2021] 开展负责基于数据驱动的停车设施选址问题的研究
+			</li>
+			<li>
+				[7/2021] 弹性研究论文被国际绿色智能交通系统与安全学术会议接收
+			</li>
+			<li>
+				[7/2021] 参与国家重点专项项目交通弹性课题申报工作，课题申报获批
+			</li>
+			<li>
+				[6/2021] 参加世界交通大会(WTC)学术会议
+			</li>
+			<li>
+				[5/2021] 开展交通弹性相关研究
+			</li>
+			<li>
+				[4/2021] 重庆市主城区公共交通动态判断与对策研究。<b>学生骨干，阿里巴巴高德地图项目合作实习生</b>
+			</li>
+			<li>
+				[3/2021] 负责公交线网优化可视化平台搭建工作，技术栈<b>javascript,html,CSS</b>,框架<b>VUE</b>
+			</li>
+			<li>
+				[1/2021] 交通大数据教材编写工作，负责编写数据库部分内容
+			</li>
+			<li>
+				[12/2020] 北京市交委tocc预测预警项目，冬奥场馆大客流预警
+			</li>
+			<li>
+				[9/2020] 牵头负责交通数据科学书籍的翻译校核工作
+			</li>
+			<li>
+				[9/2020] 研究生入学北京航空航天大学交通学院交通运输专业
+			</li>
+			<li>
+				[6/2020] 本科毕业并被评为大连市优秀毕业生
+			</li>
+			<li>
+				[1/2020] 考取中华人民共和国海员证和海员适任证书
+			</li>
+			<li>
+				[9/2019] 获得保研资格，推免至北京航空航天大学
+			</li>
+			<li>
+				[1/2019] 全国大学生创新创业训练计划， 加入自动监督机制的图书馆预约管理系统
+			</li>
+			<li>
+				[10/2018] 全国大学生数学竞赛
+			</li>
+			<li>
+				[10/2018] 全国大学生计算机二级证书（<b>MS office</b>）
+			</li>
+			<li>
+				[9/2018] 担任大连海事大学学术性社团德尔塔学社主席
+			</li>
+			<li>
+				[9/2018] 全国大学生数学建模竞赛
+			</li>
+			<li>
+				[4/2018] 全国大学生“创青春”创新创业大赛，In 三联 App
+			</li>
+			<li>
+				[12/2017] 全国大学生创新创业年会高校志愿服务
+			</li>
+			<li>
+				[12/2017] 全国大学生创新创业训练计划，手势交互技术及应用
+			</li>
+			<li>
+				[7/2017] 全国大学生暑期三下乡社会实践活动
+			</li>
+			<li>
+				[12/2016] 全国大学生创新创业训练计划，学生综合信息平台搭建
+			</li>
+			<li>
+				[9/2016] 本科入学大连海事大学 <b>航海技术实验班</b>
+			</li>
+			<!-- <li>
+				[12/2019] Received <a href="http://scholarship.baidu.com/">Baidu Scholarship</a> (10 recipients
+				globally).
+				Press Coverage:
+				<a href="http://news.ruc.edu.cn/archives/267603">
+					<img class="press" src="resources/ruc.png"></img>
+				</a>,
+			</li>
+			<li>
+				[06/2019] Presented Future Prediction paper at <span style="font-weight:bold">CVPR 2019</span>. [<a
+					href="https://twitter.com/jcniebles/status/1141366303921303552" target="_blank">Tweets</a>]
+			</li>
+			<li>[02/2019] <span style="font-weight:bold">Future activity & path prediction</span> paper reported by the
+				media with <span style="font-weight:bold">30k+ views</span> in a week. <a href="https://next.cs.cmu.edu"
+					target="_blank"><i title="Go to project page" class="icon-zoom-in"></i></a></li>
+			<li>[12/2018] <span style="font-weight:bold">MemexQA</span> paper accepted by <span
+					style="font-weight:bold">TPAMI</span>. <a href="https://memexqa.cs.cmu.edu" target="_blank"><i
+						title="Go to project page" class="icon-zoom-in"></i></a></li> -->
+		</ul>
+	</div>
+
+
+	<div class="content education">
+		<a name="education"></a>
+		<div class="title">教育经历</div>
+		<ul>
+			<li>
+				<span class="title">交通运输 研究生</span>
+				<div class="float-right time">2020 - present</div>
+				&nbsp;&nbsp;<div class="info">&nbsp;&nbsp;北京航空航天大学</div>
+				<div class="info">&nbsp;&nbsp;导师: <a href="http://trevorma.com/">马晓磊</a>
+				</div>
+			</li>
+			<li>
+				<span class="title">航海技术(实验) 本科</span>
+				<div class="float-right time">2016 - 2020</div>
+				&nbsp;&nbsp;<div class="info">&nbsp;&nbsp;大连海事大学</div>
+			</li>
+		</ul>
+	</div>
+
+	<div class="content pro">
+		<a name="project"></a>
+		<div class="title">项目</div>
+		<ul>
+			<span style="font-weight: bold;font-size: 24px">重庆市主城区公共交通动态判断与对策研究（学生骨干，阿里巴巴高德地图项目合作实习生）</span>
+			<!-- <span
+				style="font-style: italic;font-size: 24px;">2021.03-2021.11
+			</span> -->
+			<br />
+			<br />
+			<li>
+				<span style="font-size: 20px">作为学生主力，与高德对接，梳理静态指标，出行体验指标和通勤指标三大部分指标计算文档与报告大纲</span>
+			</li>
+			<li>
+				<span style="font-size: 20px">驻场高德地图和重庆城市交通投资开发集团，利用pyhton和QGIS，处理并可视化线路基础数据和海量通勤数据</span>
+			</li>
+			<li>
+				<span style="font-size: 20px">从公共交通基础设施建设，居民出行和通勤分析三个方面，按照重庆中心城区，内环区和五个热点区三个层级展开分析</span>
+			</li>
+			<li>
+				<span style="font-size: 20px">主导五个热点区通勤思路分析，挖掘通勤需求与公共交通供给间的关系，给出优化建议，部分建议已经落地实施</span>
+			</li>
+		</ul>
+		<ul>
+			<br />
+			<span style="font-weight: bold;font-size: 24px">公交线网可视化平台及路网态势检测解析系统搭建</span>
+			<div class="float-right time" style="font-style: italic;font-size: 24px;font-weight: bold">2021.03-2021.11
+			</div>
+			</span>
+			<br />
+			<br />
+			<li>
+				<span style="font-size: 20px">独立设计并搭建<a
+						href="https://roadnetvisual.netlify.app/">公交可视化系统</a>界面，技术栈<b>javascript,html,CSS</b>，所用框架<b>Vue</b>。</span>
+			</li>
+			<li>
+				<span
+					style="font-size: 20px">取高德api可视化指定公交线路图并区分上下行的原始线路图，通过优化处理后的POI坐标点绘制优化后的路线，并对优化前后的线路和指标的对比来展示优化线路的效果。</span>
+			</li>
+			<li>
+				<span style="font-size: 20px">设计并搭建<a
+						href="https://roadnetplat.netlify.app/">交通路网态势检测解析系统</a>，将北京市一年的道路事故进行可视化展示，并显示事故影响排名以及详细事故信息。</span>
+			</li>
+		</ul>
+		<ul>
+			<br />
+			<span style="font-weight: bold;font-size: 24px">“华为杯”研究生数学建模竞赛（队长）</span>
+			<div class="float-right time" style="font-style: italic;font-size: 24px;font-weight: bold">2021.10</div>
+			</span>
+			<br />
+			<br />
+			<li>
+				<span
+					style="font-size: 20px">所选研究问题是航空公司机组排班问题，对航空公司员工排班进行组合优化实现资源高效配置。通过线性加权方法构建多目标优化函数，构建混合整数规划模型精确描述问题，设计启发式算法求解。</span>
+			</li>
+			<li>
+				<span style="font-size: 20px">取通过构建启发式算法框架创新性提出基于禁忌规则的“解编和组编”的优化思路，具有较高适应性和推广性。</span>
+			</li>
+		</ul>
+		<ul>
+			<br />
+			<span style="font-weight: bold;font-size: 24px">基于数据驱动的停车设施选址项目</span>
+			<div class="float-right time" style="font-style: italic;font-size: 24px;font-weight: bold">2021.5-present
+			</div>
+			</span>
+			<br />
+			<br />
+			<li>
+				<span style="font-size: 20px">独立承担并负责项目涉及到的所有需求。
+				</span>
+			</li>
+			<li>
+				<span style="font-size: 20px">提出加权K-means聚类研究设施选址问题。</span>
+			</li>
+			<li>
+				<span style="font-size: 20px">运用鲁棒优化对问题进行建模求解分析。</span>
+			</li>
+		</ul>
+	</div>
+
+
+	<div class="content publications">
+		<a name="publications"></a>
+		<div class="title">文章 </div>
+		<ol>
+			<li>
+				<!--<div class="imgblock"><img src="camera_ready/peekfuture.png"></img></div>-->
+				<div class="imgblock"><img src="camera_ready/next.gif"></img></div>
+				<span class="title">Peeking into the Future: Predicting Future Person Activities and Locations in Videos
+				</span>
+				<div class="info text-success italic"><span style="font-weight:bold">Junwei Liang</span>, Lu Jiang, Juan
+					Carlos Niebles, Alexander Hauptmann, Li Fei-Fei</div>
+				<div class="info">In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition
+					(CVPR), 2019. <span class="text-error">(Translated and reported by multiple Chinese media (<a
+							href="https://weixin.sogou.com/weixin?type=1&s_from=input&query=%E9%87%8F%E5%AD%90%E4%BD%8D"
+							target="_blank">量子位</a> & <a
+							href="https://weixin.sogou.com/weixin?type=1&s_from=input&query=%E6%9C%BA%E5%99%A8%E4%B9%8B%E5%BF%83"
+							target="_blank">机器之心</a>, 02/13/2019), with 30k+ views in a week.)</span> </div>
+				<div class="stuff">
+					<a class="" href="https://arxiv.org/abs/1902.03748" target="_blank">[Paper]</a>
+					<a class="" href="camera_ready/future19.bib" target="_blank">[BibTex]</a>
+					<a class="" href="https://www.youtube.com/watch?v=NyrGxGoS01U" target="_blank">[Demo Video]</a>
+					<a class="" href="https://next.cs.cmu.edu" target="_blank">[Project Page/Code/Model]</a>
+				</div>
+				<div style="clear:both"></div>
+			</li>
+			<li>
+				<div class="imgblock"><img src="camera_ready/icassp17_1.png"></img></div>
+				<span class="title">Temporal Localization of Audio Events for Conflict Monitoring in Social Media
+				</span>
+				<div class="info text-success italic"><span style="font-weight:bold">Junwei Liang</span>, Lu Jiang and
+					Alexander Hauptmann</div>
+				<div class="info">In IEEE International Conference on Acoustics, Speech, and Signal Processing (ICASSP),
+					2017.</div>
+				<div class="stuff">
+					<a class="" href="camera_ready/icassp17_1.pdf" target="_blank">[Paper]</a>
+					<a class="" href="camera_ready/icassp17_1.bib" target="_blank">[BibTex]</a>
+					<a class="" href="https://www.youtube.com/watch?v=em-0CsJoqeU" target="_blank">[Demo Video]</a>
+				</div>
+				<div style="clear:both"></div>
+			</li>
+
+
+		</ol>
+	</div>
+
+	<div class="content honors" name='honors'>
+		<a name="honors"></a>
+		<div class="title">奖励</div>
+		<ul>
+			<li>Baidu Scholarship (10 recipients globally) <div class="float-right">2019</div>
+			</li>
+			<li>Best Demo Award at CBMI2019 <div class="float-right">2019</div>
+			</li>
+		</ul>
+	</div>
+
+	<div class="content research">
+		<a name="research"></a>
+		<div class="title">科研经历</div>
+		<ul>
+			<li>
+				<span class="title">Research Assistant at Carnegie Mellon University</span>
+				<div class="float-right time">2015 - present</div>
+				<div class="info">
+					Worked on Large-scale Video Analysis and Retrieval. Studied unsupervised learning of video concept
+					detectors from the Internet. Also participated in the development of event reconstruction tool.
+					The project is for Synchronization and localization of noisy user-generated videos to reconstruct
+					the event scene and timeline from unorganized social media videos, affiliates with CMU <a
+						href="http://www.cmu.edu/chrs/" target="_blank">Center for Human Rights Science</a>.
+					I'm also the major contributor to the government-funded projects: <a
+						href="https://www.nist.gov/communications-technology-laboratory/pscr" target="_blank">PSCR by
+						NIST</a> (2017-2020), <a href="https://www.iarpa.gov/index.php/research-programs/diva"
+						target="_blank">DIVA by IARPA</a> (2017-2021) and <a
+						href="https://www.iarpa.gov/index.php/research-programs/aladdin-video" target="_blank">ALADDIN
+						by IARPA</a> (2017).
+					Advised by <a href="https://scholar.google.com/citations?user=Py54GcEAAAAJ" target="_blank">Prof.
+						Alexander Hauptmann</a>.
+					<!--[<a href="https://www.nist.gov/video/real-time-video-analytics-situation-awareness" target="_blank">PSCR 2018 presentation</a>, <a href="https://www.nist.gov/ctl/pscr/2019-stakeholder-meeting-analytics-sessions" target="_blank">2019</a>]-->
+				</div>
+			</li>
+			<li>
+				<span class="title">Research Assistant at Renmin University of China</span>
+				<div class="float-right time">2013 - 2015</div>
+				<div class="info">
+					Studied semantic concept annotation on user-generated videos using audio. Participated HUAWEI
+					semantic concept annotation of UGC videos grand challenge 2014 and ranked 3rd in the evaluation.
+					Also worked on natural language description generation for images and videos with deep models.
+					Ranked 1st in ImageCLEF 2015 “image to sentence” subtask in the evaluation.
+				</div>
+			</li>
+		</ul>
+	</div>
+
+	<div class="content pro">
+		<a name="teaching"></a>
+		<div class="title">学术会议</div>
+		<ul>
+			<li>
+				<span class="title">Guest Lecture: Introduction to Machine Learning in Computer Vision [<a
+						href="https://docs.google.com/presentation/d/1xvDyHBWIvn-Z5Mj-5Up47YvzET5zl6X0dTSQyFXf-v0/edit?usp=sharing"
+						target="_blank">Slides</a>]</span>
+				<div class="float-right time">2020</div>
+				<div class="info">11-775 Large-scale Multimedia Analysis, hosted by Prof. Alex Hauptmann and Prof. Rita
+					Singh, Carnegie Mellon University</div>
+			</li>
+			<li>
+				<span class="title">Invited Talk: Real-time Video Analytics for Situation Awareness
+					[<a href="https://www.nist.gov/video/real-time-video-analytics-situation-awareness"
+						target="_blank">Talk-2018</a>]
+					[<a href="https://www.nist.gov/ctl/pscr/real-time-video-analytics-situation-awareness"
+						target="_blank">Talk-2019</a>]
+				</span>
+				<div class="float-right time">2019</div>
+				<div class="info">At the Public Safety Communications Research annual conference hosted by <a
+						href="https://www.nist.gov/ctl/pscr">NIST PSCR</a>.</div>
+			</li>
+		</ul>
+	</div>
+	<div class="content pro">
+		<div class="title">Academic Service</div>
+		<ul>
+			<li>
+				<span class="title">Journal Reviewer</span>
+				<div class="info">ACM TOMM</div>
+				<div class="info">Neurocomputing</div>
+				<div class="info">IEEE Transactions on Multimedia</div>
+				<div class="info">IEEE Access</div>
+				<div class="info">IEEE Transactions on Circuits and Systems for Video Technology</div>
+			</li>
+			<li>
+				<span class="title">Conference Reviewer</span>
+				<div class="info">ACM Multimedia 2017</div>
+				<div class="info">ACM Multimedia 2019</div>
+				<div class="info">ACM Multimedia 2020</div>
+				<div class="info">ACL Student Research Workshop 2020</div>
+			</li>
+		</ul>
+	</div>
+
+
+
+	<div class="footer footer1">
+
+		<div class="footer footer2">
+			<div class="content white-text">
+
+			</div>
+		</div>
+
+		<!--
+	a Junwei Liang's production
+	contact: junweil@cs.cmu.edu
+-->
+</body>
+
+</html>
