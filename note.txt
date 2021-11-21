@@ -15,9 +15,3 @@ in www/.htaccess
 	order deny,allow
 	allow from all
 	IndexIgnore * # to disable indexing list
-
-1. connect to junweil@linux.gp.cs.cmu.edu
-
-
-direct change index.html and then scp
-	scp index.html junweil@linux.gp.cs.cmu.edu:~/www/
